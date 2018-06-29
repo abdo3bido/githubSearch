@@ -20,6 +20,15 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBOutlet var query: UITextField!
+    
+    @IBOutlet var WV: UIWebView!
+    @IBAction func search(_ sender: UIButton) {
+        var q = query.text;
+        WV.scalesPageToFit = true;
+        WV.loadRequest(URLRequest(url: URL(string:"https://github.com/search?q="+q!)!));
+    }
+    
 
 }
 
